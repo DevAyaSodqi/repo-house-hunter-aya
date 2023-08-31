@@ -1,18 +1,21 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
 import NavBar from '../../Component/NavBar';
 import validationSchema from '../../Util/validation/login'
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
+import AuthContext from '../../Context/AuthContext';
+
 import './style.css';
 
 
 
 
 const Login = ()=>{
+  const {  login } = useContext(AuthContext);
 
   const navigate = useNavigate();
   function navToHome(){
-    navigate('/profile')
+    navigate('/')
   }
 
    
@@ -53,6 +56,7 @@ const Login = ()=>{
         const response = await fetch('https://my-json-server.typicode.com/MennatullahAsh/UsersAPI/users',userData);
         const data = await response.json();
          console.log(data);
+         login(userData)
         clear();
         setIsLoading(false);
        navToHome();
@@ -95,7 +99,7 @@ const Login = ()=>{
 
 
            {error && (
-            <Alert  severity="error">
+            <Alert  severity="error" style={{marginTop:'8px'}}>
               {error}
             </Alert>
           )}

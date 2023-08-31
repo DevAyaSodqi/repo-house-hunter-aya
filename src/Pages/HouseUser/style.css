@@ -1,0 +1,67 @@
+.house-card{
+    display: flex;
+    align-items: center;
+    gap: 37px;
+    display: relative;
+    flex-wrap: wrap;
+    border: 1px solid #E5E5E5;
+    width: 645px;
+    margin-top: -7px;
+    box-shadow: 10px 10px 5px #C9C3C3;
+  }
+  .img-card img{
+    width:100px;
+    height: 100px;
+  }
+  .container{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 794px;
+    align-items: center;
+    gap: 10px;
+  }
+    .style-content{
+  margin-top: 243px;
+    }
+  .btn-save{
+      width: 150px;
+      color: white;
+      background-color: #24AB70 !important;
+      margin-left: 20px !important;
+    }
+    .profile-style{
+      display: inline-block;
+    }
+    .tap{
+      display: flex !important;
+      justify-content: center;
+      background-color: #24AB70;
+      color: white !important;
+      width: 14%;
+    }
+    .css-xlklk7{
+      margin-top: 40px !important;
+    }
+    .nm {
+      display: flex;
+      align-items: center;
+    }
+    .tab-icon {
+      margin-right: 8px;
+    }
+    .tab {
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+      gap: 30px !important;
+      color: #FFFFFF !important;
+    }
+    .tab:active {
+      color:#54DDA1 !important
+    }
+    .tab:hover {
+      color:#54DDA1 !important
+    }
+    .tab :visited{
+      color:#54DDA1 !important
+    }
