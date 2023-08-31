@@ -9,24 +9,35 @@ function AuthProvider({ children }) {
   
 
   const [user, setUser] = useState([]);
-  const getUser = async () => {
-      const response = await fetch("https://my-json-server.typicode.com/DevAyaSodqi/mock-api/house");
-      const FinalData = await response.json();
-      setUser(FinalData)
-  }
+  // const getUser = async () => {
+  //     const response = await fetch("https://my-json-server.typicode.com/DevAyaSodqi/mock-api/house");
+  //     const FinalData = await response.json();
+  //     setUser(FinalData)
+  // }
 
+  const login = (userData)=>{
+      setUser(userData); 
+      setIsAuth(true);
+
+  }
+    const logout = ()=>{
+      setUser(null); 
+      setIsAuth(false);
+
+  }
 
 
 
   useEffect(() => {
     (async () => {
       try {
-        setError(null);
-        setAuthLoading(true);
-        const response = await fetch("https://my-json-server.typicode.com/DevAyaSodqi/mock-api/house",user);
-        const FinalData = await response.json();
-        getUser(FinalData)
-        setIsAuth(true);
+        // setError(null);
+        // setAuthLoading(true);
+        // const response = await fetch("https://my-json-server.typicode.com/DevAyaSodqi/mock-api/house",user);
+        // const FinalData = await response.json();
+        // getUser(FinalData)
+        // setIsAuth(true);
+
         setAuthLoading(false);
       } catch (err) {
         setAuthLoading(false);
@@ -42,7 +53,7 @@ function AuthProvider({ children }) {
   }, [isAuth]);
 
   return (
-    <AuthContext.Provider value={{ setIsAuth, isAuth, authLoading, error }}>
+    <AuthContext.Provider value={{ setIsAuth, isAuth, authLoading, error ,login, logout}}>
       {children}
     </AuthContext.Provider>
   );
